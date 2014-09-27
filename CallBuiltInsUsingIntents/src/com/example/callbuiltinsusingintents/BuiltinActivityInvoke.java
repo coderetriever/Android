@@ -62,6 +62,7 @@ public class BuiltinActivityInvoke extends Activity {
 		Intent i = new Intent("com.example.callbuiltinsusingintents.mybrowseractivity");
         i.setData(Uri.parse("http://www.amazon.com"));
         startActivity(i);
+        //startActivity(Intent.createChooser(i, "Open URL using ..."));
         		
       
         //Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://www.amazon.com"));
