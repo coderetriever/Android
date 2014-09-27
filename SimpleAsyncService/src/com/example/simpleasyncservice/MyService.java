@@ -1,4 +1,4 @@
-package com.example.simpleservice;
+package com.example.simpleasyncservice;
 
 import java.net.MalformedURLException;
 import java.net.URL;
