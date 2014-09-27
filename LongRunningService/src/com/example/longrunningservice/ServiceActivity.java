@@ -1,4 +1,6 @@
-package com.example.simpleservice;
+package com.example.longrunningservice;
+
+import com.example.simpleservice.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
