@@ -3,7 +3,7 @@ package com.example.passingdatafromactivitytoaservice;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.example.simpleservice.R;
+import com.example.passingdatafromactivitytoaservice.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
