@@ -1,6 +1,6 @@
 package com.example.intentservice;
 
-import com.example.simpleservice.R;
+import com.example.intentservice.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
