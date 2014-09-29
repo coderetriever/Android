@@ -1,6 +1,6 @@
 package com.example.intentpassingdata;
 
-import com.example.intentreturnresults.R;
+import com.example.intentpassingdata.R;
 
 import android.app.Activity;
 import android.content.Intent;
