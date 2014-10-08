@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -70,9 +71,12 @@ public class FilesActivity extends Activity
 	}	
 	
 	public void onClickLoad(View view) {
+		Toast.makeText(getBaseContext(),
+				"Attempting!",
+				Toast.LENGTH_SHORT).show();
 		try
 		{
-            FileInputStream fIn = new FileInputStream("textfile.txt");
+            FileInputStream fIn = new FileInputStream("/data/data/com.example.savetostorage/files/textfile.txt");
             InputStreamReader isr = new InputStreamReader(fIn);
             
 			char[] inputBuffer = new char[READ_BLOCK_SIZE];
@@ -98,6 +102,7 @@ public class FilesActivity extends Activity
 					Toast.LENGTH_SHORT).show();
 		}
 		catch (IOException ioe) {
+			Log.d("Blah", ioe.getMessage());
 			ioe.printStackTrace();
 		}
 	}	
