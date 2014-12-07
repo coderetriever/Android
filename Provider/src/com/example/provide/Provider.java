@@ -105,6 +105,21 @@ public class Provider extends ListActivity {
                       ContactsContract.Contacts.DISPLAY_NAME));
                 Log.v("Content Providers", contactID + ", " +
                     contactDisplayName);
+                
+            int hasPhone = c.getInt(c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
+            
+            if(hasPhone == 1)
+            {
+            	Cursor phoneCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + contactID, null, null);
+            	
+            	while(phoneCursor.moveToNext())
+            	{
+            		Log.v("Content Providers", phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));
+            	}
+            	
+            	phoneCursor.close();
+            }
+            
             } while (c.moveToNext());
         }
     }
