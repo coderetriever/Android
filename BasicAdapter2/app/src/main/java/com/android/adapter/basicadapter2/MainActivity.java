@@ -1,44 +1,36 @@
 package com.android.adapter.basicadapter2;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends ListActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.menu_entries, R.layout.list_element);
+        setListAdapter(adapter);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onListItemClick(ListView lv, View clickedView, int position, long id){
+        super.onListItemClick(lv, clickedView, position, id);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
+        TextView tv = (TextView) clickedView;
 
-        return super.onOptionsItemSelected(item);
+        Toast.makeText(getBaseContext(), tv.getText(), Toast.LENGTH_SHORT).show();
     }
 }
